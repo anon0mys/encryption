@@ -85,7 +85,7 @@ class Encryptor
 
   def decrypt_file(filename, rotation)
     file = File.open("#{filename}", "r") #Create the file handle to the input file
-    new_name = "#{filename}".gsub(/encrypted_/, 'decrypted')
+    new_name = "#{filename}".gsub(/encrypted/, 'decrypted')
     enc_message = file.read #Read the text of the input file
     message = message_decrypt(enc_message, rotation) #Decrypt the text
     decrypted_file = File.open("#{new_name}", "w") #Create a name for the output file
